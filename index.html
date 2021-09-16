@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Matching Game</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="shortcut icon" href="images/logo.png" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="title">
+				<h1>Matching Game</h1>
+			</div>  
+
+			<div class="head">
+				<p>Moves: <span class="Moves">0</span></p>
+				<p class="timer">
+					<span id="seconds">00</span>:<span id="tens">00</span>
+				</p>
+				<button type="button" class="restert">Restert</button>
+			</div>
+			<div class="memory-game">
+				<!--1-->
+				<div class="memory-card">
+					<img src="images/logo.png" alt="frontface" class="frontface" />
+					<img src="images/among-1.png" alt="backface" class="backface" />
+				</div>
+				<!--2-->
+				<div class="memory-card">
+					<img src="images/logo.png" alt="frontface" class="frontface" />
+					<img src="images/among-1.png" alt="backface" class="backface" />
+				</div>
+				<!--3-->
+				<div class="memory-card">
+					<img src="images/logo.png" alt="frontface" class="frontface" />
+					<img src="images/among-2.png" alt="backface" class="backface" />
+				</div>
+				<!--4-->
+				<div class="memory-card">
+					<img src="images/logo.png" alt="frontface" class="frontface" />
+					<img src="images/among-2.png" alt="backface" class="backface" />
+				</div>
+				<!--5-->
+				<div class="memory-card">
+					<img src="images/logo.png" alt="frontface" class="frontface" />
+					<img src="images/among-3.png" alt="backface" class="backface" />
+				</div>
+				<!--6-->
+				<div class="memory-card">
+					<img src="images/logo.png" alt="frontface" class="frontface" />
+					<img src="images/among-3.png" alt="backface" class="backface" />
+				</div>
+				<!--7-->
+				<div class="memory-card">
+					<img src="images/logo.png" alt="frontface" class="frontface" />
+					<img src="images/among-4.png" alt="backface" class="backface" />
+				</div>
+				<!--8-->
+				<div class="memory-card">
+					<img src="images/logo.png" alt="frontface" class="frontface" />
+					<img src="images/among-4.png" alt="backface" class="backface" />
+				</div>
+				<!--9-->
+				<div class="memory-card">
+					<img src="images/logo.png" alt="frontface" class="frontface" />
+					<img src="images/among-5.png" alt="backface" class="backface" />
+				</div>
+				<!--10-->
+				<div class="memory-card">
+					<img src="images/logo.png" alt="frontface" class="frontface" />
+					<img src="images/among-5.png" alt="backface" class="backface" />
+				</div>
+				<!--11-->
+				<div class="memory-card">
+					<img src="images/logo.png" alt="frontface" class="frontface" />
+					<img src="images/among-6.png" alt="backface" class="backface" />
+				</div>
+				<!--12-->
+				<div class="memory-card">
+					<img src="images/logo.png" alt="frontface" class="frontface" />
+					<img src="images/among-6.png" alt="backface" class="backface" />
+				</div>
+			</div>
+		</div>
+		<div class="modal hidden">
+			<h2>Congratulations</h2>
+			<p>
+				You completed this game in <span class="move-model"></span> moves and
+				<span class="second-model"></span> seconds
+			</p>
+		</div>
+		<div class="overlay hidden"></div>
+            <audio  id="audio" >
+                <source src="audio/audiostart.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+		<script src="script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+body {
+	height: 100vh;
+	background: url(images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+}
+.container {
+	margin: auto;
+}
+.memory-game {
+	margin: auto;
+	width: 550px;
+	height: 550px;
+	display: flex;
+	flex-wrap: wrap;
+	perspective: 1000px;
+}
+.memory-card {
+	width: calc(25% - 10px);
+	height: calc(33.33% - 10px);
+	position: relative;
+	margin: 5px;
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 5px;
+	transform: scale(1);
+	transform-style: preserve-3d;
+	transition: transform 0.5s;
+}
+.frontface,
+.backface {
+	width: 100%;
+	height: 80%;
+	position: absolute;
+	padding: 10px;
+	backface-visibility: hidden;
+}
+.memory-card:active {
+	transform: scale(0.97);
+	transition: transform 0.2s;
+}
+.memory-card.flip {
+	transform: rotateY(180deg);
+}
+.backface {
+	transform: rotateY(180deg);
+}
+.head {
+	margin-bottom: 10px;
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.head p,
+.head span {
+	font-family: 'Amatic SC', cursive;
+	color: white;
+	font-size: 26px;
+	font-weight: 700;
+}
+h1 {
+	color: red;
+	font-family: 'Press Start 2P', sans-serif;
+	font-weight: 400;
+	font-size: 28px;
+}
+.title {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+}
+.head button {
+	font-family: 'Amatic SC', cursive;
+	color: white;
+	border-radius: 5px;
+	padding: 0 20px;
+	background: none;
+	font-size: 28px;
+	border: 2px solid white;
+	font-weight: 700;
+	margin-left: 200px;
+}
+.head button:hover {
+	color: red;
+	border: 2px solid red;
+}
+.hidden {
+	display: none;
+}
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	height: 50%;
+	background: rgba(255, 255, 255, 1);
+	padding: 6rem;
+	border-radius: 5px;
+	box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+	z-index: 10;
+}
+.modal h2 {
+	font-family: 'Amatic SC', cursive;
+	color: red;
+	font-weight: 700;
+	font-size: 60px;
+}
+.modal p {
+	font-family: 'Amatic SC', cursive;
+	font-weight: 700;
+	font-size: 30px;
+	color: black;
+}
+.modal span {
+	font-family: 'Amatic SC', cursive;
+	font-weight: 700;
+	color: black;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(3px);
+	z-index: 5;
+}
