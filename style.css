@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@font-face {
+	font-family: vcr_font;
+	src: url(font/VCR_OSD_MONO_1.001.ttf) format('truetype');
+}
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: sans-serif;
 }
 
 body {
@@ -20,8 +23,8 @@ body {
 }
 .memory-game {
 	margin: auto;
-	width: 550px;
-	height: 550px;
+	width: 500px;
+	height: 520px;
 	display: flex;
 	flex-wrap: wrap;
 	perspective: 1000px;
@@ -69,11 +72,12 @@ body {
 	font-size: 26px;
 	font-weight: 700;
 }
+
 h1 {
 	color: red;
-	font-family: 'Press Start 2P', sans-serif;
-	font-weight: 400;
-	font-size: 28px;
+	font-family: vcr_font;
+	font-weight: 500;
+	font-size: 35px;
 }
 .title {
 	margin-top: 20px;
@@ -98,13 +102,16 @@ h1 {
 .hidden {
 	display: none;
 }
+.visibilty {
+	visibility: hidden;
+}
 .modal {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 50%;
-	height: 50%;
+	width: 40%;
+	height: 40%;
 	background: rgba(255, 255, 255, 1);
 	padding: 6rem;
 	border-radius: 5px;
@@ -115,18 +122,19 @@ h1 {
 	font-family: 'Amatic SC', cursive;
 	color: red;
 	font-weight: 700;
-	font-size: 60px;
+	font-size: 45px;
+	transform: translateX(15%);
 }
 .modal p {
 	font-family: 'Amatic SC', cursive;
 	font-weight: 700;
-	font-size: 30px;
+	font-size: 22px;
 	color: black;
 }
 .modal span {
 	font-family: 'Amatic SC', cursive;
 	font-weight: 700;
-	color: black;
+	color: red;
 }
 
 .overlay {

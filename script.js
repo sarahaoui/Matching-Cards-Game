@@ -14,7 +14,6 @@ let lockBoard=false;
 let hasFlipedCard=false;
 let firstCard ,secondCard;
 let firstbackface,secondbackface;
-let vargit=false;
 let randomPos;
 let movesCount=0;
 let seconds=00;
@@ -47,6 +46,7 @@ function startGame(){
 const closeModel=function(){
     model.classList.add('hidden'); //get back the classe hidden 
     overly.classList.add('hidden'); 
+    location.reload();
     
 
 }
@@ -84,14 +84,20 @@ function resetBoard(){
 function checkforMatch(){
   //check cards 
     if(firstbackface.src===secondbackface.src){
-        console.log('the same')
-        firstCard.style.pointerEvents='none';
-        secondCard.style.pointerEvents='none';
+       // firstCard.style.pointerEvents='none';
+       // secondCard.style.pointerEvents='none';
+        setTimeout(()=>{
+        lockBoard=false;
+        firstCard.classList.add('visibilty');
+        secondCard.classList.add('visibilty');
+        },1000);
+        lockBoard=true;
         correct++;
+       
+        
         
     }else{
         lockBoard=true;
-        console.log('diffrent');
         setTimeout(()=>{
          firstCard.classList.remove('flip');
          secondCard.classList.remove('flip');
@@ -120,6 +126,7 @@ overly.addEventListener('click',closeModel);
  /***********Restert Button**********/
 restertbtn.addEventListener('click',function(){
    location.reload();
+   
     
    
  });
