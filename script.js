@@ -14,6 +14,7 @@ let lockBoard=false;
 let hasFlipedCard=false;
 let firstCard ,secondCard;
 let firstbackface,secondbackface;
+let vargit=false;
 let randomPos;
 let movesCount=0;
 let seconds=00;
