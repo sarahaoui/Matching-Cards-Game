@@ -28,6 +28,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	perspective: 1000px;
+	margin-bottom: 10px;
 }
 .memory-card {
 	width: calc(25% - 10px);
@@ -80,9 +81,9 @@ h1 {
 	font-size: 35px;
 }
 .title {
-	margin-top: 20px;
 	display: flex;
 	justify-content: center;
+	margin-top: 10px;
 }
 .head button {
 	font-family: 'Amatic SC', cursive;
@@ -146,4 +147,115 @@ h1 {
 	background-color: rgba(0, 0, 0, 0.6);
 	backdrop-filter: blur(3px);
 	z-index: 5;
+}
+@media only screen and (max-width: 1279px) {
+	.modal {
+		width: 40%;
+		height: 30%;
+		padding: 0rem;
+	}
+	.modal h2 {
+		font-size: 40px;
+	}
+	.modal p {
+		font-size: 18px;
+	}
+}
+@media only screen and (max-width: 1130px) {
+	.modal h2 {
+		font-size: 25px;
+	}
+	.modal p {
+		font-size: 14px;
+	}
+}
+@media only screen and (max-width: 747px) {
+	.memory-game {
+		width: 450px;
+		height: 470px;
+	}
+
+	.modal h2 {
+		font-size: 20px;
+	}
+	.modal p {
+		font-size: 10px;
+	}
+	.modal {
+		width: 30%;
+		height: 15%;
+	}
+}
+@media only screen and (max-width: 570px) {
+	.modal h2 {
+		font-size: 18px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.memory-game {
+		width: 400px;
+		height: 420px;
+	}
+	.head p,
+	.head span {
+		font-size: 23px;
+	}
+	.head button {
+		padding: 0 10px;
+		font-size: 23px;
+		margin-left: 150px;
+	}
+	h1 {
+		font-size: 30px;
+	}
+	.modal {
+		width: 40%;
+		height: 10%;
+	}
+	.modal h2 {
+		font-size: 16px;
+	}
+}
+@media only screen and (max-width: 435px) {
+	.memory-game {
+		width: 350px;
+		height: 370px;
+	}
+	.head p,
+	.head span {
+		font-size: 22px;
+	}
+	.head button {
+		padding: 0 8px;
+		font-size: 22px;
+		margin-left: 150px;
+	}
+	h1 {
+		font-size: 27px;
+	}
+}
+@media only screen and (max-width: 388px) {
+	.memory-game {
+		width: 300px;
+		height: 320px;
+	}
+	.head p,
+	.head span {
+		font-size: 20px;
+	}
+	.head button {
+		padding: 0 5px;
+		font-size: 20px;
+		margin-left: 100px;
+	}
+	h1 {
+		font-size: 24px;
+	}
+	.modal h2 {
+		font-size: 14px;
+	}
+	.modal p {
+		font-size: 8px;
+	}
 }
