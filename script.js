@@ -131,8 +131,8 @@ restertbtn.addEventListener('click',function(){
     
    
  });
- document.addEventListener('keydown',function(e){    //if click on keybord in espace close the window also
-   if((e.key==='Escape')&&(!model.classList.contains('hidden'))){   //hidden classe not existe than add it 
+ document.addEventListener('keydown',function(e){    
+   if((e.key==='Escape')&&(!model.classList.contains('hidden'))){    
        closeModel();
    }
 });
@@ -144,7 +144,7 @@ for(let i=0 ;i<=cards.length;i++){
         if(lockBoard) return;
         this.classList.add('flip');
 
-     //if double click in the same card
+     // double click in the same card
         if(this===firstCard) return;
 
     if(!hasFlipedCard){
