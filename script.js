@@ -3,21 +3,21 @@ const cards=document.querySelectorAll('.memory-card ');
 const backcards= document.querySelectorAll('.backface');
 const restertbtn=document.querySelector('.restert');
 const moved=document.querySelector('.Moves');
-const secondEl=document.querySelector('#seconds');
-const tensEl=document.querySelector('#tens');
+const countdown=document.querySelector('#countdown');
 const model= document.querySelector('.modal');
 const overly=document.querySelector('.overlay');
 const secondModel=document.querySelector('.second-model');
 const MovesModel=document.querySelector('.move-model');
 let audio=document.getElementById('audio');
+const gameOverModel=document.querySelector('.GameOver');
 let lockBoard=false;
 let hasFlipedCard=false;
 let firstCard ,secondCard;
 let firstbackface,secondbackface;
 let randomPos;
 let movesCount=0;
-let seconds=00;
-let tens=00;
+let startingMinuts=1;
+let time=startingMinuts * 60;
 let interval;
 let correct=0;
 
@@ -30,8 +30,8 @@ function play(){
     audio.muted=false;
     audio.play();
 }
+
 function startGame(){
-   
     cards.forEach(cardd =>{
         cardd.classList.add('flip');
     });
@@ -44,34 +44,35 @@ function startGame(){
 }
 
 const closeModel=function(){
-    model.classList.add('hidden'); //get back the classe hidden 
-    overly.classList.add('hidden'); 
+    model.classList.add('visibilty');  
+    overly.classList.add('visibilty'); 
+    gameOverModel.classList.add('visibilty');
     location.reload();
     
 
 }
 const openModel=function(){
-     model.classList.remove('hidden'); //delete classe hidden from the classe model
-     overly.classList.remove('hidden'); 
+     model.classList.remove('visibilty'); 
+     overly.classList.remove('visibilty'); 
      MovesModel.textContent=movesCount;
     secondModel.textContent=secondEl.textContent;
 }
+
+
 function startTimer(){
-    tens++;
-    if(tens <9){
-        tensEl.innerHTML="0"+tens;
-    }
-    if(tens>9){
-        tensEl.innerHTML=tens;
-    }
-    if(tens>99){
-        seconds++;
-        secondEl.innerHTML="0"+seconds;
-        tens=0;
-        tensEl.innerHTML="0"+0;
-    }
-    if(seconds>9){
-        secondEl.innerHTML=seconds;
+
+    const minutes= Math.floor(time / 60);
+    let seconds = time % 60;
+    seconds= seconds<10 ?'0'+seconds : seconds;
+    let timeover=`${minutes}:${seconds}`;
+    countdown.innerHTML=timeover
+    time--;
+    
+    if(timeover==='0:00'){
+       gameOverModel.classList.remove('visibilty');
+       overly.classList.remove('visibilty'); 
+       clearInterval(interval);
+       correct=0;
     }
     
 }
@@ -93,9 +94,6 @@ function checkforMatch(){
         },1000);
         lockBoard=true;
         correct++;
-       
-        
-        
     }else{
         lockBoard=true;
         setTimeout(()=>{
@@ -114,14 +112,17 @@ function checkforMatch(){
      randomPos=Math.trunc(Math.random()*12) ; 
     card.style.order=randomPos;  // the order of item flex(container should be flex) });
 });
-interval=setInterval(startTimer);
+interval=setInterval(startTimer,900);
+
  })();  // (function)(); imediatly invoked expression
  
+
  /********Moved Count********/
  function countMoved(){
    movesCount++;
    moved.textContent=movesCount;
  }
+
 overly.addEventListener('click',closeModel);
  /***********Restert Button**********/
 restertbtn.addEventListener('click',function(){
@@ -150,10 +151,7 @@ for(let i=0 ;i<=cards.length;i++){
         //first click
         hasFlipedCard=true;
         firstCard=this;
-        firstbackface=backcards[i];
-        
-          
-          
+        firstbackface=backcards[i]; 
     }
     else{
         //second click
@@ -161,8 +159,6 @@ for(let i=0 ;i<=cards.length;i++){
         secondCard=this;
         secondbackface=backcards[i];
         checkforMatch();
-        
-       
     }
     countMoved();
     if(correct==6){
@@ -170,10 +166,9 @@ for(let i=0 ;i<=cards.length;i++){
         clearInterval(interval);
         openModel();
         correct=0;
-        },900);
-        
-        
+        },900);  
     }
+     
     });
 }
 

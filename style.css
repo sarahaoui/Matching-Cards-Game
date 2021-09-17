@@ -99,9 +99,6 @@ h1 {
 	color: red;
 	border: 2px solid red;
 }
-.hidden {
-	display: none;
-}
 .visibilty {
 	visibility: hidden;
 }
@@ -117,13 +114,16 @@ h1 {
 	border-radius: 5px;
 	box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
 	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 .modal h2 {
 	font-family: 'Amatic SC', cursive;
 	color: red;
 	font-weight: 700;
 	font-size: 45px;
-	transform: translateX(15%);
 }
 .modal p {
 	font-family: 'Amatic SC', cursive;

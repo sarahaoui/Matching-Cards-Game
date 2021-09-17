@@ -12,13 +12,11 @@
 		<div class="container">
 			<div class="title">
 				<h1>Matching Game</h1>
-			</div>  
+			</div>
 
 			<div class="head">
 				<p>Moves: <span class="Moves">0</span></p>
-				<p class="timer">
-					<span id="seconds">00</span>:<span id="tens">00</span>
-				</p>
+				<p class="timer">Time: <span id="countdown">1:00</span></p>
 				<button type="button" class="restert">Restert</button>
 			</div>
 			<div class="memory-game">
@@ -84,19 +82,24 @@
 				</div>
 			</div>
 		</div>
-		<div class="modal hidden">
-			<h2>Congratulations</h2>
-			<p>
-				You completed this game in <span class="move-model"></span> moves and
-				<span class="second-model"></span> seconds
-			</p>
-		
+		<div class="modal visibilty">
+			<div><h2>Congratulations</h2></div>
+			<div>
+				<p>
+					You completed this game in <span class="move-model"></span> moves and
+					<span class="second-model"></span> seconds
+				</p>
+			</div>
 		</div>
-		<div class="overlay hidden"></div>
-            <audio  id="audio" >
-                <source src="audio/audiostart.mp3" type="audio/mpeg">
-            </audio>
-        </div>
+		<div class="modal GameOver visibilty">
+			<div><h2>Game Over</h2></div>
+			<div><p>Time is over</p></div>
+		</div>
+		<div class="overlay visibilty"></div>
+		<audio id="audio">
+			<source src="audio/audiostart.mp3" type="audio/mpeg" />
+		</audio>
+
 		<script src="script.js"></script>
 	</body>
 </html>
