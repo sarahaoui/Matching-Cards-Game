@@ -55,7 +55,7 @@ const openModel=function(){
      model.classList.remove('visibilty'); 
      overly.classList.remove('visibilty'); 
      MovesModel.textContent=movesCount;
-    secondModel.textContent=secondEl.textContent;
+    secondModel.textContent=countdown.textContent;
 }
 
 
