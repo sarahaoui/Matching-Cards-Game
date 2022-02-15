@@ -16,9 +16,9 @@ A simple, responsive and fun matching card game created with HTML, CSS and JavaS
   <li>Click Play Again to start a new game.</li>
   <li>A restart button is available.</li>
 </ul>
-<h2>You win Model</h2>
-<img align="center" alt="Rafa-CSS" height="300" width="600" src="https://user-images.githubusercontent.com/58111836/154130826-c699cf34-806a-4409-a913-f51f37f36bd8.PNG">
 <h2>Game Over Model</h2>
+<img align="center" alt="Rafa-CSS" height="300" width="600" src="https://user-images.githubusercontent.com/58111836/154130826-c699cf34-806a-4409-a913-f51f37f36bd8.PNG">
+<h2>You win Model</h2>
 <img align="center" alt="Rafa-CSS" height="300" width="600" src="https://user-images.githubusercontent.com/58111836/154131241-cd5a64cf-f5b0-4ba6-abbf-d06478d1d7ba.PNG">
 
 
