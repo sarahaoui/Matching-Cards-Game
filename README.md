@@ -5,6 +5,8 @@ A simple, responsive and fun matching card game created with HTML, CSS and JavaS
 
 ![matchingcard](https://user-images.githubusercontent.com/58111836/154127166-41a0337c-1f98-4de5-ad9e-c396e7f41715.gif)
 
+
+
 <h2>How to Play </h2>
 <ul>
   <li>12 cards in the deck.</li>
@@ -22,7 +24,5 @@ A simple, responsive and fun matching card game created with HTML, CSS and JavaS
 <img align="center" alt="Rafa-CSS" height="300" width="600" src="https://user-images.githubusercontent.com/58111836/154131241-cd5a64cf-f5b0-4ba6-abbf-d06478d1d7ba.PNG">
 
 
-<h2>Author</h2>
-Sarah Aouina
 
 
