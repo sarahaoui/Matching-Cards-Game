@@ -234,6 +234,16 @@ h1 {
 	h1 {
 		font-size: 27px;
 	}
+	.modal {
+		width: 60%;
+		height: 20%;
+	}
+	.modal h2 {
+		font-size: 15px;
+	}
+	.modal p {
+		font-size: 10px;
+	}
 }
 @media only screen and (max-width: 388px) {
 	.memory-game {
@@ -251,11 +261,5 @@ h1 {
 	}
 	h1 {
 		font-size: 24px;
-	}
-	.modal h2 {
-		font-size: 14px;
-	}
-	.modal p {
-		font-size: 8px;
 	}
 }

@@ -21,16 +21,14 @@ let time=startingMinuts * 60;
 let interval;
 let correct=0;
 const startAudio= new Audio ('audio/audiostart.mp3');
-
+const matchAudio= new Audio ('audio/match.mp3');
+const loseAudio= new Audio ('audio/lose.mp3');
+const winnAudio= new Audio ('audio/winn.mp3');
+const musicAudio= new Audio ('audio/music.mp3');
 
 /********Functions********/
 
-function play(){
-    startAudio.muted=true;
-    startAudio.play();
-    startAudio.muted=false;
-    startAudio.play();
-}
+
 
 function startGame(){
     cards.forEach(cardd =>{
@@ -70,6 +68,8 @@ function startTimer(){
     time--;
     
     if(timeover==='0:00'){
+        musicAudio.pause();
+        loseAudio.play();
        gameOverModel.classList.remove('visibilty');
        overly.classList.remove('visibilty'); 
        clearInterval(interval);
@@ -86,9 +86,8 @@ function resetBoard(){
 function checkforMatch(){
   //check cards 
     if(firstbackface.src===secondbackface.src){
-       // firstCard.style.pointerEvents='none';
-       // secondCard.style.pointerEvents='none';
         setTimeout(()=>{
+        matchAudio.play();
         lockBoard=false;
         firstCard.classList.add('visibilty');
         secondCard.classList.add('visibilty');
@@ -107,7 +106,12 @@ function checkforMatch(){
 }
 /*******Shuffle Function*******/
 (function shuffle(){
-    play();
+        startAudio.play();
+        setTimeout(()=>{
+        startAudio.pause();
+         musicAudio.play();
+        },4500); 
+       
     startGame();
     cards.forEach(card =>{
      randomPos=Math.trunc(Math.random()*12) ; 
@@ -163,8 +167,11 @@ for(let i=0 ;i<=cards.length;i++){
     }
     countMoved();
     if(correct==6){
+        
         setTimeout(()=>{
         clearInterval(interval);
+        musicAudio.pause();
+        winnAudio.play();
         openModel();
         correct=0;
         },900);  
