@@ -20,15 +20,16 @@ let startingMinuts=1;
 let time=startingMinuts * 60;
 let interval;
 let correct=0;
+const startAudio= new Audio ('audio/audiostart.mp3');
 
 
 /********Functions********/
 
 function play(){
-    audio.muted=true;
-    audio.play();
-    audio.muted=false;
-    audio.play();
+    startAudio.muted=true;
+    startAudio.play();
+    startAudio.muted=false;
+    startAudio.play();
 }
 
 function startGame(){
