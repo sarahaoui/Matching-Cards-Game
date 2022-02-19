@@ -23,6 +23,10 @@ A simple, responsive and fun matching card game created with HTML, CSS and JavaS
 <h2>You win Model</h2>
 <img align="center" alt="Rafa-CSS" height="300" width="600" src="https://user-images.githubusercontent.com/58111836/154131241-cd5a64cf-f5b0-4ba6-abbf-d06478d1d7ba.PNG">
 
+##
+Play the snake game on a URL!
+
+<https://matchingcardsgame.netlify.app>
 
 
 
